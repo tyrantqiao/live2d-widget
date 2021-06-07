@@ -17,6 +17,7 @@ function loadWidget(config) {
 	}
 	localStorage.removeItem("waifu-display");
 	sessionStorage.removeItem("waifu-text");
+	console.log("load waifu······")
 	document.body.insertAdjacentHTML("beforeend", `<div id="waifu">
 			<div id="waifu-tips"></div>
 			<canvas id="live2d" width="800" height="800"></canvas>
@@ -269,6 +270,7 @@ function initWidget(config, apiPath) {
 	toggle.addEventListener("click", () => {
 		toggle.classList.remove("waifu-toggle-active");
 		if (toggle.getAttribute("first-time")) {
+			console.log("load live2d···········")
 			loadWidget(config);
 			toggle.removeAttribute("first-time");
 		} else {
@@ -285,6 +287,7 @@ function initWidget(config, apiPath) {
 			toggle.classList.add("waifu-toggle-active");
 		}, 0);
 	} else {
+		console.log("load live2d ······················")
 		loadWidget(config);
 	}
 }
